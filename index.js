@@ -28,8 +28,6 @@ function convertToCelsiusStrings(data) {
   });
 }
 
-console.log(convertToCelsiusStrings(temperatureData));
-
 // Convert to Fahreheit
 function convertToFahrenheitStrings(data) {
   return data.map(item => {
@@ -41,8 +39,6 @@ function convertToFahrenheitStrings(data) {
     return `${roundedValue}°F`;
   });
 }
-
-console.log(convertToFahrenheitStrings(temperatureData));
 
 
 // Calculate the total of all temperature values in Fahrenheit
@@ -60,7 +56,7 @@ function tot_temperature_in_fahrenheit(data) {
 }
 
 const totalFahrenheit = tot_temperature_in_fahrenheit(temperatureData);
-console.log(`Total Fahrenheit: ${totalFahrenheit}°F`);
+console.log(`${totalFahrenheit}°F`);
 
  // Calculate the total of all temperature values in Celsius
 function tot_temperature_in_celsius(data) {
@@ -77,19 +73,19 @@ function tot_temperature_in_celsius(data) {
 }
 
 const totalCelsius = tot_temperature_in_celsius(temperatureData);
-console.log(`Total Celsius: ${totalCelsius}°C`);
+console.log(`${totalCelsius}°C`);
 
 
  // Average Temperatures
 const avg_temperature_in_fahrenheit = tot_temperature_in_fahrenheit(temperatureData)/30;
-console.log(`Average Fahrenheit: ${avg_temperature_in_fahrenheit}°F`);
+console.log(`${avg_temperature_in_fahrenheit}°F`);
 
 const avg_temperature_in_celsius =  tot_temperature_in_celsius(temperatureData)/30
-console.log(`Average Celsius: ${avg_temperature_in_celsius}°C`);
+console.log(`${avg_temperature_in_celsius}°C`);
 
 module.exports = {
-  // tot_temperature_in_fahrenheit,
-  // tot_temperature_in_celsius,
-  // avg_temperature_in_fahrenheit,
-  // avg_temperature_in_celsius
+  tot_temperature_in_fahrenheit,
+  tot_temperature_in_celsius,
+  avg_temperature_in_fahrenheit,
+  avg_temperature_in_celsius,
 };
