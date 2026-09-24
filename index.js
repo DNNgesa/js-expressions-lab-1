@@ -15,3 +15,31 @@ const temperatureData = [
   { value: 74, unit: 'F' }, { value: 17, unit: 'C' }, 
   { value: 76, unit: 'F' }, { value: 29, unit: 'C' },
 ];
+
+ // Convert to Celcius
+function convertToCelsiusStrings(data) {
+  return data.map(item => {
+    const celsiusValue = item.unit === 'F' 
+      ? (item.value - 32) * 5 / 9 
+      : item.value;
+    
+    const roundedValue = Math.round(celsiusValue * 100) / 100;
+    return `${roundedValue}°C`;
+  });
+}
+
+console.log(convertToCelsiusStrings(temperatureData));
+
+// Convert to Fahreheit
+function convertToFahrenheitStrings(data) {
+  return data.map(item => {
+    const fahrenheitValue = item.unit === 'C' 
+      ? (item.value * 9 / 5) + 32 
+      : item.value;
+    
+    const roundedValue = Math.round(fahrenheitValue * 100) / 100;
+    return `${roundedValue}°F`;
+  });
+}
+
+console.log(convertToFahrenheitStrings(temperatureData));
